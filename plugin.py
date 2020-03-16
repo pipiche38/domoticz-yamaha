@@ -141,8 +141,10 @@ class Zone:
 
     def handleMessage(self, command, value):
         arrData = command.split(':')
-        zoneKey = arrData[0]
-        command = arrData[1]
+        zoneKey = ''
+        if len(arrData) == 2:
+            zoneKey = arrData[0]
+            command = arrData[1]
 
         if (zoneKey != self.zoneKey):
             return
